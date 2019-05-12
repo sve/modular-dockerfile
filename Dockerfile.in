@@ -1,0 +1,15 @@
+ARG DOCKER_ALPINE_VERSION
+
+# <Container[base]>
+
+FROM alpine:${DOCKER_ALPINE_VERSION} AS base
+include(Dockerfile.base.in)
+
+# </Container>
+
+# <Container[execute]>
+
+FROM base AS execute
+include(Dockerfile.execute.in)
+
+# </Container>
